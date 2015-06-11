@@ -9,7 +9,7 @@ class DockingStation
   	Bike.new
   end
 
-  def dock bike
+  def dock 
   end
 
 end
