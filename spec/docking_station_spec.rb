@@ -13,9 +13,15 @@ describe DockingStation do
   it { is_expected.to respond_to(:dock).with(1).argument }
 
   describe 'release_bike' do
+    
     it 'raises an error when no bikes available' do
       expect {subject.release_bike}.to raise_error 'No bikes available'
     end
+
+    it 'raises an error when you try to release a broken bike' do
+      expect {subject.release_bike}.to raise_error 'Bike is broken'
+    end
+
   end
 
   describe 'dock' do
@@ -28,5 +34,7 @@ describe DockingStation do
   it 'has a DEFAULT capacity' do
     expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
   end
+
+
 
 end
